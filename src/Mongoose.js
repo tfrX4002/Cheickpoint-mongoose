@@ -4,7 +4,7 @@ const Person = require('./model/personModel')
 
 Connection()
 
-// ajouter une personne
+// add a person
 
 let person = new Person()
 
@@ -12,9 +12,9 @@ let person = new Person()
 // person.age = 30,
 // person.favoriteFoods = ['Burger', 'Foufou']
 
-// person.save().then(person =>
-//         console.log(person)
-//     )
+person.save().then(person =>
+        console.log(person)
+    )
 
 let listPerson = [
     {
@@ -34,26 +34,26 @@ let listPerson = [
     }
 ]
 
-// ajouter plusieurs personnes
+// add several persons 
 
-// Person.create(listPersonne)
+Person.create(listPerson)
 
-// recupérer toutes les personnes
+// recover several people 
 
-// Person.find({}).then(person => console.log(person))
+Person.find({}).then(person => console.log(person))
 
-//récupérer une personne qui aime "Alloco"
+//recover a person who likes "Alloco"
 
-// Person.findOne({ favoriteFoods : "Alloco"}).then(person => console.log(person))
+Person.findOne({ favoriteFoods : "Alloco"}).then(person => console.log(person))
 
-// récupération par _id
+// recovery by _id
 
-// Person.findById({ _id : '635fb6dd7ca00a0b20491a2a'}).then(person => console.log(person))
+Person.findById({ _id : '635fb6dd7ca00a0b20491a2a'}).then(person => console.log(person))
 
-//supprimer une personne
+//delete a person 
 
-// Person.findOneAndRemove({ _id : '635fb6dd7ca00a0b20491a2a' }).then(person => console.log(person))
+Person.findOneAndRemove({ _id : '635fb6dd7ca00a0b20491a2a' }).then(person => console.log(person))
 
-//mise à jour
+//update 
 
-// Person.findOneAndUpdate({ nom : 'Touré' }, { age : 33}).then(person => console.log(person))
+Person.findOneAndUpdate({ nom : 'Touré' }, { age : 33}).then(person => console.log(person))
